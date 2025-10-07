@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Day 30 — CSS Positioning examples and a sticky navbar. Portfolio-ready layout showcasing relative, absolute, fixed, and sticky positioning." />
+  <title>Day 30 — CSS Positioning · Sticky Navbar</title>
+
+  <!-- Link to the stylesheet (you said you'll provide style.css next) -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Favicon (simple inline SVG as data URL to keep this self-contained) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23007acc'/%3E%3Ctext x='50' y='58' font-size='48' font-family='Arial' text-anchor='middle' fill='white'%3EV%3C/text%3E%3C/svg%3E" />
+
+  <!-- Minimal meta for social previews -->
+  <meta property="og:title" content="Day 30 — CSS Positioning · Sticky Navbar" />
+  <meta property="og:description" content="A clean portfolio-ready project demonstrating CSS positioning: relative, absolute, fixed, and sticky." />
+</head>
+<body>
+  <!-- Skip link for accessibility -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header + Sticky Navbar (positioning handled in style.css) -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a class="brand" href="#" aria-label="Go to homepage">
+        <!-- Simple SVG logo -->
+        <svg width="36" height="36" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <rect x="2" y="2" width="20" height="20" rx="4" fill="#007acc"/>
+          <text x="12" y="16" text-anchor="middle" fill="white" font-family="Arial" font-size="12">V</text>
+        </svg>
+        <span class="brand-text">Varun • Frontend</span>
+      </a>
+
+      <nav class="site-nav" id="mainNav" aria-label="Primary Navigation">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navList">
+          <span class="sr-only">Toggle navigation</span>
+          <svg width="22" height="16" viewBox="0 0 22 16" aria-hidden="true"><path d="M0 2h22M0 8h22M0 14h22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+
+        <ul class="nav-list" id="navList">
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#positioning">Positioning Demo</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main id="main" class="site-main">
+    <!-- Hero section: will contain a relatively positioned container with an absolutely positioned badge -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <h1>CSS Positioning — Relative • Absolute • Fixed • Sticky</h1>
+          <p class="lead">Day 30 practice: build a portfolio-ready layout and demonstrate position properties with real UI examples. The navbar is sticky — explore the examples below.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#positioning">See demo</a>
+            <a class="btn btn-secondary" href="#projects">View projects</a>
+          </div>
+        </div>
+
+        <!-- Decorative / demonstrative card positioned absolutely inside a relative parent -->
+        <div class="hero-visual position-relative">
+          <!-- This avatar/card will be absolutely positioned by CSS -->
+          <div class="profile-card position-absolute" aria-hidden="true">
+            <svg class="avatar" width="72" height="72" viewBox="0 0 100 100" role="img" aria-label="Profile avatar">
+              <circle cx="50" cy="30" r="22" fill="#ffd27f"></circle>
+              <rect x="20" y="56" width="60" height="30" rx="6" fill="#ffd27f"></rect>
+            </svg>
+            <div class="profile-meta">
+              <strong>Varun T.</strong>
+              <small>Frontend Developer</small>
+            </div>
+          </div>
+
+          <!-- Example hero background illustration (pure CSS in style.css will style it) -->
+          <div class="decorative-shape" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects grid (professional portfolio) -->
+    <section id="projects" class="projects container">
+      <h2 class="section-title">Selected Projects</h2>
+      <p class="section-intro">A curated selection — each card will demonstrate layout techniques and is ready for your content.</p>
+
+      <div class="cards-grid">
+        <article class="card">
+          <div class="card-media">
+            <!-- placeholder SVG image -->
+            <svg viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Project thumbnail">
+              <rect width="600" height="360" rx="8" fill="#e9f2ff"></rect>
+              <text x="50%" y="50%" text-anchor="middle" fill="#6b7a8a" font-size="24" font-family="Arial">Project 1</text>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3>Interactive Gallery</h3>
+            <p>Responsive gallery with lazy-loading and accessible controls — great place to show off image & layout skills.</p>
+            <a class="card-link" href="#">View case</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <svg viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Project thumbnail">
+              <rect width="600" height="360" rx="8" fill="#fff4e6"></rect>
+              <text x="50%" y="50%" text-anchor="middle" fill="#7a5a2a" font-size="24" font-family="Arial">Project 2</text>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3>Landing Page</h3>
+            <p>Pixel-perfect landing page with fluid typography and modern layout techniques.</p>
+            <a class="card-link" href="#">View case</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <svg viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Project thumbnail">
+              <rect width="600" height="360" rx="8" fill="#f0ffe6"></rect>
+              <text x="50%" y="50%" text-anchor="middle" fill="#2a7a2a" font-size="24" font-family="Arial">Project 3</text>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3>Dashboard</h3>
+            <p>Data-driven dashboard UI with modular components and clear visual hierarchy.</p>
+            <a class="card-link" href="#">View case</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Positioning demo section: contains explicit elements to be styled with relative/absolute/fixed/sticky -->
+    <section id="positioning" class="positioning-demo container">
+      <h2 class="section-title">Positioning Demo</h2>
+      <p class="section-intro">This section contains live UI members that will demonstrate <code>position: relative</code>, <code>absolute</code>, <code>fixed</code>, and <code>sticky</code> — style rules go in <code>style.css</code>.</p>
+
+      <!-- Relative container: children positioned relative to this -->
+      <div class="demo-block demo-relative">
+        <h3>Relative (parent)</h3>
+        <p>Container is <code>position: relative;</code> so absolutely positioned children align to it.</p>
+        <div class="demo-box position-relative demo-box--large">
+          <div class="badge position-absolute">Absolute badge</div>
+          <p class="demo-note">This demo-box is the positioned parent; the badge is positioned absolutely inside it.</p>
+        </div>
+      </div>
+
+      <!-- Fixed example: element that remains visible while scrolling -->
+      <div class="demo-block demo-fixed">
+        <h3>Fixed</h3>
+        <p>A fixed element stays anchored to the viewport (e.g., help button, CTA).</p>
+        <!-- The actual fixed styling will be applied in style.css -->
+        <button class="fixed-cta" aria-label="Quick contact">Contact</button>
+      </div>
+
+      <!-- Sticky example: an element that becomes fixed within its container after scroll -->
+      <div class="demo-block demo-sticky">
+        <h3>Sticky</h3>
+        <p>The following sidebar simulates a sticky block that will stay visible after scrolling past its offset.</p>
+
+        <div class="two-col">
+          <div class="content-col">
+            <p>Scroll the page (or resize) to see how sticky behaves. Below are repeated paragraphs to allow scrolling inside the page so the sticky effect is visible in practice.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a sapien vitae dolor porta vehicula. Donec in tristique augue. Suspendisse potenti.</p>
+            <p>Praesent euismod, mauris sit amet congue volutpat, nunc magna elementum sapien, id ultricies odio augue ac sapien.</p>
+            <p>Aliquam erat volutpat. Integer id interdum urna. Nullam scelerisque lorem quis augue fermentum, vitae tempus erat volutpat.</p>
+            <p>More content to allow natural scrolling demonstration. Chaotic text to stretch the page for demo purposes.</p>
+            <p>End of demo content region.</p>
+          </div>
+
+          <aside class="sidebar-col">
+            <div class="sticky-card position-sticky">
+              <strong>Sticky card</strong>
+              <p>I'm sticky — I'll stick when you scroll past my top offset. This demonstrates <code>position: sticky;</code>.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about container">
+      <h2 class="section-title">About</h2>
+      <p>I'm practicing CSS fundamentals and building a portfolio. This page is structured for clarity and will be styled to look polished and professional using a separate <code>style.css</code>.</p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact container">
+      <h2 class="section-title">Contact</h2>
+      <form class="contact-form" action="#" method="post" aria-label="Contact form">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required />
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+        </div>
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <div class="form-row form-actions">
+          <button type="submit" class="btn btn-primary">Send message</button>
+          <button type="reset" class="btn btn-ghost">Reset</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Fixed footer to show 'fixed' example in context (can be styled or hidden later) -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Varun Tembhare — Built for Day 30 practice</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Minimal JS: mobile nav toggle + current year + optional small behavior.
+       Styling & interactive transitions should be placed in style.css where possible. -->
+  <script>
+    (function () {
+      // Mobile nav toggle
+      const navToggle = document.getElementById('navToggle');
+      const navList = document.getElementById('navList');
+      navToggle.addEventListener('click', () => {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', String(!expanded));
+        navList.classList.toggle('nav-open');
+      });
+
+      // Simple smooth scroll for anchor links (enhancement)
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('href').slice(1);
+          const targetEl = document.getElementById(targetId);
+          if (targetEl) {
+            e.preventDefault();
+            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Close nav on mobile if open
+            if (navList.classList.contains('nav-open')) {
+              navList.classList.remove('nav-open');
+              navToggle.setAttribute('aria-expanded', 'false');
+            }
+          }
+        });
+      });
+
+      // Insert current year
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
